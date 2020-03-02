@@ -16,13 +16,13 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
     @Autowired
     PhotocenterDaoImplFake dao;
 
-    @Autowired
-    PhotocenterRepository repository;
+//    @Autowired
+//    PhotocenterRepository repository;
 
     @PostConstruct
     void init(){
         List<Photocenter> list = dao.getAll();
-        //repository.saveAll(list);
+//        repository.saveAll(list);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public List<Photocenter> getAll() {
-        return repository.findAll();
+        return dao.getAll();
     }
 
     @Override
@@ -48,10 +48,11 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public Photocenter delete(String id) {
-//        Photocenter photocenter = this.get(id);
-//        dao.getAll().remove(photocenter);
-//        return photocenter;
-        repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        Photocenter photocenter = this.get(id);
+        dao.getAll().remove(photocenter);
+        return photocenter;
+//
+//        repository.deleteById(id);
+//        return repository.findById(id).orElse(null);
     }
 }
