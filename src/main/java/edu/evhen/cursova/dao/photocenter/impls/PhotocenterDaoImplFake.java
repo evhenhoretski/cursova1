@@ -15,7 +15,8 @@ public class PhotocenterDaoImplFake implements IPhotocenterDao {
 
     @Override
     public Photocenter save(Photocenter photocenter) {
-        return null;
+        dataSet.getPhotocenters().add(photocenter);
+        return photocenter;
     }
 
     @Override

@@ -22,7 +22,7 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
     @PostConstruct
     void init(){
         List<Photocenter> list = dao.getAll();
-        repository.saveAll(list);
+        //repository.saveAll(list);
     }
 
     @Override
@@ -32,7 +32,8 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public Photocenter get(String id) {
-        return null;
+        return dao.getAll().stream().filter(item -> item.getId().equals(id))
+                .findFirst().orElse(null);
     }
 
     @Override
@@ -47,6 +48,9 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public Photocenter delete(String id) {
+//        Photocenter photocenter = this.get(id);
+//        dao.getAll().remove(photocenter);
+//        return photocenter;
         repository.deleteById(id);
         return repository.findById(id).orElse(null);
     }
