@@ -1,10 +1,8 @@
 package edu.evhen.cursova.dao.person.impls;
 
 import edu.evhen.cursova.dao.person.interfeces.IPersonDao;
-import edu.evhen.cursova.dao.photocenter.interfeces.IPhotocenterDao;
 import edu.evhen.cursova.dataSet.DataSet;
 import edu.evhen.cursova.model.Person;
-import edu.evhen.cursova.model.Photocenter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

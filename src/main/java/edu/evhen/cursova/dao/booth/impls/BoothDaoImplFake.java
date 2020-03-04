@@ -3,7 +3,6 @@ package edu.evhen.cursova.dao.booth.impls;
 import edu.evhen.cursova.dao.booth.interfeces.IBoothDao;
 import edu.evhen.cursova.dataSet.DataSet;
 import edu.evhen.cursova.model.Booth;
-import edu.evhen.cursova.model.Chapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

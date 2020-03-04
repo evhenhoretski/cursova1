@@ -1,9 +1,7 @@
 package edu.evhen.cursova.service.booth.Impls;
 
 import edu.evhen.cursova.dao.booth.impls.BoothDaoImplFake;
-import edu.evhen.cursova.dao.photocenter.impls.PhotocenterDaoImplFake;
 import edu.evhen.cursova.dao.repository.BoothRepository;
-import edu.evhen.cursova.dao.repository.PhotocenterRepository;
 import edu.evhen.cursova.model.Booth;
 import edu.evhen.cursova.service.booth.Interfecess.IBoothService;
 import org.springframework.beans.factory.annotation.Autowired;

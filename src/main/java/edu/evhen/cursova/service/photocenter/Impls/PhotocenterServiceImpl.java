@@ -13,6 +13,7 @@ import java.util.List;
 
 @Service
 public class PhotocenterServiceImpl implements IPhotocenterService {
+    //Hello
     @Autowired
     PhotocenterDaoImplFake dao;
 
