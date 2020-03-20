@@ -14,6 +14,10 @@ public class Headoffice {
         this.adress = adress;
     }
 
+    public Headoffice() {
+
+    }
+
     public String getId() {
         return id;
     }

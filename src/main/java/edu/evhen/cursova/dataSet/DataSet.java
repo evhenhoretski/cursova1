@@ -10,11 +10,11 @@ import java.util.List;
 
 @Component
 public class DataSet {
-    Photocenter mainPhotocenter = new Photocenter("4", '4', "ooo", '7');
+    Photocenter mainPhotocenter = new Photocenter("4", "4", "ooo", "7");
     private List<Photocenter> photocenters = Arrays.asList(
-            new Photocenter("1", '5', "paper", '6'),
-            new Photocenter("2",  '3', "paper", '8'),
-            new Photocenter("3",  '3', "paper", '7'),
+            new Photocenter("1", "5", "paper", "6"),
+            new Photocenter("2",  "3", "paper", "8"),
+            new Photocenter("3",  "3", "paper", "7"),
             mainPhotocenter
     );
     private Photocenter firstPhotocenter = photocenters.get(0);
@@ -46,10 +46,10 @@ public class DataSet {
 
 
     private List<Chapter> chapters = new ArrayList<>(Arrays.asList(
-            new Chapter("1", "Hoholya", '5', "1", true, "5",
+            new Chapter("1", "Hoholya", '5', "1", "true", "5",
                     "10", "0", "true", '5',
                     "10", "1400", "14", firstPhotocenter),
-            new Chapter("2", "Pidhirska", '3', "1", false, "5",
+            new Chapter("2", "Pidhirska", '3', "1", "false", "5",
                     "10", "3", "true", '5',
                     "10", "1400", "14", secondPhotocenter)
     ));

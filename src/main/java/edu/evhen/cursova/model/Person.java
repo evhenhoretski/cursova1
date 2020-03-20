@@ -18,6 +18,9 @@ public class Person {
         this.professional = professional;
     }
 
+    public Person() {
+    }
+
     public String getId() {
         return id;
     }

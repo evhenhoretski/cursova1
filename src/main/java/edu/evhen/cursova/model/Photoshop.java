@@ -29,6 +29,10 @@ public class Photoshop {
         this.adress = adress;
     }
 
+    public Photoshop() {
+
+    }
+
     public String getId() {
         return id;
     }

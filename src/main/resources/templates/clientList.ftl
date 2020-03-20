@@ -25,10 +25,11 @@
                 <td>${client.amateurs}</td>
                 <td>${client.discountcard}</td>
                 <td><a href="delete/${client.id}"><button>Delete</button></a></td>
-                <td><button>Edit</button></td>
+                <td><a href="edit/${client.id}"><button>Edit</button></a></td>
             </tr>
         </#list>
     </table>
+    <a href="create"><button>Create</button></a>
 </div>
 </body>
 </html>

@@ -4,9 +4,7 @@ import edu.evhen.cursova.model.Photocenter;
 import edu.evhen.cursova.service.photocenter.Impls.PhotocenterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -22,12 +20,23 @@ public class PhotocenterAPIController {
         return service.getAll();
     }
 
-    @RequestMapping("/delete/{id}")
-    String delete(Model model,
-                  @PathVariable("id") String id){
-        service.delete(id);
-        model.addAttribute("photocenter", service.getAll());
-        return "photocenterList";
+    @RequestMapping("/{id}")
+        Photocenter getById(@PathVariable("id") String id) {
+            return service.get(id);
+        }
+
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    Photocenter create(@RequestBody Photocenter photocenter) {
+        return service.save(photocenter);
     }
+
+
+    @RequestMapping("/delete/{id}")
+    Photocenter delete(@PathVariable("id") String id){
+        return service.delete(id);
+    }
+
+
 
 }

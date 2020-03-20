@@ -23,6 +23,9 @@ public class Print {
         this.term = term;
     }
 
+    public Print() {
+    }
+
     public String getId() {
         return id;
     }
@@ -72,5 +75,11 @@ public class Print {
                 ", type='" + type + '\'' +
                 ", term=" + term +
                 '}';
+    }
+
+    public void setDateModified(LocalDateTime now) {
+    }
+
+    public void setDateCreated(LocalDateTime now) {
     }
 }

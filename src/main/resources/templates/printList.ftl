@@ -27,10 +27,11 @@
                 <td>${print.type}</td>
                 <td>${print.term}</td>
                 <td><a href="delete/${print.id}"><button>Delete</button></a></td>
-                <td><button>Edit</button></td>
+                <td><a href="edit/${print.id}"><button>Edit</button></a></td>
             </tr>
         </#list>
     </table>
+    <a href="create"><button>Create</button></a>
 </div>
 </body>
 </html>

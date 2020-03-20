@@ -31,12 +31,12 @@ public class ClientServiceImpl implements IClientService {
 
     @Override
     public Client save(Client client) {
-        return null;
+        return repository.save(client);
     }
 
     @Override
     public Client get(String id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -46,12 +46,13 @@ public class ClientServiceImpl implements IClientService {
 
     @Override
     public Client edit(Client client) {
-        return null;
+        return repository.save(client);
     }
 
     @Override
     public Client delete(String id) {
+        Client client = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return client;
     }
 }

@@ -3,6 +3,7 @@ package edu.evhen.cursova.service.provider.Impls;
 import edu.evhen.cursova.dao.print.impls.PrintDaoImplFake;
 import edu.evhen.cursova.dao.provider.impls.ProviderDaoImplFake;
 import edu.evhen.cursova.dao.repository.ProviderRepository;
+import edu.evhen.cursova.model.Photocenter;
 import edu.evhen.cursova.model.Provider;
 import edu.evhen.cursova.service.provider.Interfecess.IProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,17 @@ public class ProviderServiceImpl implements IProviderService {
     @PostConstruct
     void init(){
         List<Provider> list = dao.getAll();
-        repository.saveAll(list);
+        //repository.saveAll(list);
     }
 
     @Override
     public Provider save(Provider provider) {
-        return null;
+        return repository.save(provider);
     }
 
     @Override
     public Provider get(String id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -42,12 +43,13 @@ public class ProviderServiceImpl implements IProviderService {
 
     @Override
     public Provider edit(Provider provider) {
-        return null;
+        return repository.save(provider);
     }
 
     @Override
     public Provider delete(String id) {
+        Provider provider = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return provider;
     }
 }

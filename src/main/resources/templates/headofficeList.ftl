@@ -21,10 +21,11 @@
                 <td>${headoffice.id}</td>
                 <td>${headoffice.adress}</td>
                 <td><a href="delete/${headoffice.id}"><button>Delete</button></a></td>
-                <td><button>Edit</button></td>
+                <td><a href="edit/${headoffice.id}"><button>Edit</button></a></td>
             </tr>
         </#list>
     </table>
+    <a href="create"><button>Create</button></a>
 </div>
 </body>
 </html>

@@ -22,17 +22,17 @@ public class PhotoshopServiceImpl implements IPhotoshopService {
     @PostConstruct
     void init(){
         List<Photoshop> list = dao.getAll();
-        repository.saveAll(list);
+        //repository.saveAll(list);
     }
 
     @Override
     public Photoshop save(Photoshop photoshop) {
-        return null;
+        return repository.save(photoshop);
     }
 
     @Override
     public Photoshop get(String id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -42,12 +42,13 @@ public class PhotoshopServiceImpl implements IPhotoshopService {
 
     @Override
     public Photoshop edit(Photoshop photoshop) {
-        return null;
+        return repository.save(photoshop);
     }
 
     @Override
     public Photoshop delete(String id) {
+        Photoshop photoshop = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return photoshop;
     }
 }

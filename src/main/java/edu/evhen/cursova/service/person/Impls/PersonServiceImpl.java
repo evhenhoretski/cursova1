@@ -3,6 +3,7 @@ package edu.evhen.cursova.service.person.Impls;
 import edu.evhen.cursova.dao.person.impls.PersonDaoImplFake;
 import edu.evhen.cursova.dao.repository.PersonRepository;
 import edu.evhen.cursova.model.Person;
+import edu.evhen.cursova.model.Photocenter;
 import edu.evhen.cursova.service.person.Interfecess.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,12 +27,12 @@ public class PersonServiceImpl implements IPersonService {
 
     @Override
     public Person save(Person person) {
-        return null;
+        return repository.save(person);
     }
 
     @Override
     public Person get(String id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -41,12 +42,13 @@ public class PersonServiceImpl implements IPersonService {
 
     @Override
     public Person edit(Person person) {
-        return null;
+        return repository.save(person);
     }
 
     @Override
     public Person delete(String id) {
+        Person person = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return person;
     }
 }

@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.spi.LocaleServiceProvider;
 
 @Service
 public class PhotocenterServiceImpl implements IPhotocenterService {
@@ -27,13 +29,16 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public Photocenter save(Photocenter photocenter) {
-        return null;
+        //photocenter.setDateCreated(LocalDateTime.now());
+        //photocenter.setDateModified(LocalDateTime.now());
+        return repository.save(photocenter);
     }
 
     @Override
     public Photocenter get(String id) {
-        return dao.getAll().stream().filter(item -> item.getId().equals(id))
-                .findFirst().orElse(null);
+//        return dao.getAll().stream().filter(item -> item.getId().equals(id))
+//                .findFirst().orElse(null);
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -43,7 +48,8 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public Photocenter edit(Photocenter photocenter) {
-        return null;
+        //photocenter.setDateModified(LocalDateTime.now());
+        return repository.save(photocenter);
     }
 
     @Override
@@ -51,7 +57,8 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 //        Photocenter photocenter = this.get(id);
 //        dao.getAll().remove(photocenter);
 //        return photocenter;
+        Photocenter photocenter = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return photocenter;
     }
 }

@@ -5,6 +5,7 @@ import edu.evhen.cursova.dao.photocenter.impls.PhotocenterDaoImplFake;
 import edu.evhen.cursova.dao.repository.BoothRepository;
 import edu.evhen.cursova.dao.repository.PhotocenterRepository;
 import edu.evhen.cursova.model.Booth;
+import edu.evhen.cursova.model.Photocenter;
 import edu.evhen.cursova.service.booth.Interfecess.IBoothService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,17 +24,17 @@ public class BoothServiceImpl implements IBoothService {
     @PostConstruct
     void init(){
         List<Booth> list = dao.getAll();
-        repository.saveAll(list);
+        //repository.saveAll(list);
     }
 
     @Override
     public Booth save(Booth booth) {
-        return null;
+        return repository.save(booth);
     }
 
     @Override
     public Booth get(String id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -43,12 +44,13 @@ public class BoothServiceImpl implements IBoothService {
 
     @Override
     public Booth edit(Booth booth) {
-        return null;
+        return repository.save(booth);
     }
 
     @Override
     public Booth delete(String id) {
+        Booth booth = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return booth;
     }
 }

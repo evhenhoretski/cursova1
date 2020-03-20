@@ -8,15 +8,18 @@ public class Photocenter {
     @Id
     private String id;
 //    private String provider;
-    private int proceeds;//виторг
+    private String proceeds;//виторг
     private String order;//замовлення
-    private int workplace;//робочі місця
+    private String workplace;//робочі місця
 
-    public Photocenter(String id, int proceeds, String order, int workplace) {
+    public Photocenter(String id, String proceeds, String order, String workplace) {
         this.id = id;
         this.proceeds = proceeds;
         this.order = order;
         this.workplace = workplace;
+    }
+
+    public Photocenter() {
     }
 
     public String getId() {
@@ -27,11 +30,11 @@ public class Photocenter {
         this.id = id;
     }
 
-    public int getProceeds() {
+    public String getProceeds() {
         return proceeds;
     }
 
-    public void setProceeds(int proceeds) {
+    public void setProceeds(String proceeds) {
         this.proceeds = proceeds;
     }
 
@@ -43,11 +46,11 @@ public class Photocenter {
         this.order = order;
     }
 
-    public int getWorkplace() {
+    public String getWorkplace() {
         return workplace;
     }
 
-    public void setWorkplace(int workplace) {
+    public void setWorkplace(String workplace) {
         this.workplace = workplace;
     }
 
