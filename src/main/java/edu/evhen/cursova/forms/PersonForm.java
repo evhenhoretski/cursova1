@@ -1,17 +1,12 @@
-package edu.evhen.cursova.model;
+package edu.evhen.cursova.forms;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
-public class Person {
-    @Id
+public class PersonForm {
     private String id;
     private String name;
     private String card;
     private String professional;
 
-    public Person(String id, String name, String card, String professional) {
+    public PersonForm(String id, String name, String card, String professional) {
         this.id = id;
         this.name = name;
         this.card = card;
@@ -52,7 +47,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "PersonForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", card='" + card + '\'' +

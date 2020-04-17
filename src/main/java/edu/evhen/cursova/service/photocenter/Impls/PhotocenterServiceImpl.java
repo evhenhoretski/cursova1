@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PhotocenterServiceImpl implements IPhotocenterService {
@@ -53,5 +55,17 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 //        return photocenter;
         repository.deleteById(id);
         return repository.findById(id).orElse(null);
+    }
+
+    public List<Photocenter> search(String word) {
+        return this.getAll().stream()
+                .filter(photocenter -> photocenter.getOrder()
+                        .getBytes().toString().contains(word.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Photocenter> sortByEmail() {
+        return this.getAll().stream().sorted(Comparator.comparing(Photocenter::getOrder))
+                .collect(Collectors.toList());
     }
 }
