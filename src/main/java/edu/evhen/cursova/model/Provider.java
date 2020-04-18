@@ -20,6 +20,10 @@ public class Provider {
         this.paint = paint;
     }
 
+    public Provider() {
+
+    }
+
     public String getId() {
         return id;
     }

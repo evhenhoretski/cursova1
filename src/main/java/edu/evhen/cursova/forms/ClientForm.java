@@ -13,6 +13,10 @@ public class ClientForm {
         this.discountcard = discountcard;
     }
 
+    public ClientForm() {
+
+    }
+
     public String getId() {
         return id;
     }

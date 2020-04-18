@@ -18,6 +18,10 @@ public class Client {
         this.discountcard = discountcard;
     }
 
+    public Client() {
+
+    }
+
     public String getId() {
         return id;
     }

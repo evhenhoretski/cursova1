@@ -15,6 +15,10 @@ public class ProviderForm {
         this.paint = paint;
     }
 
+    public ProviderForm() {
+
+    }
+
     public String getId() {
         return id;
     }

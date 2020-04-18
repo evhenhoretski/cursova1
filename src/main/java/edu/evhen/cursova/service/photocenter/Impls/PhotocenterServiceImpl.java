@@ -34,8 +34,7 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public Photocenter get(String id) {
-        return dao.getAll().stream().filter(item -> item.getId().equals(id))
-                .findFirst().orElse(null);
+        return repository.findById(id).orElse(null);
     }
 
     @Override

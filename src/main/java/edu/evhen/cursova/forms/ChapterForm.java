@@ -7,7 +7,7 @@ public class ChapterForm {
     private String adress;//адрес
     private int workplace;//кількість робочих місць
     private String booth;//кіоски
-    private Boolean implemintation;//виконання замовлення
+    private String implemintation;//виконання замовлення
     private String manifestation;//проявка
     private String printing;//друк
     private String urgent;//термінові
@@ -18,7 +18,7 @@ public class ChapterForm {
     private String goods;//отримання товар
     private Photocenter photocenter;
 
-    public ChapterForm(String id, String adress, int workplace, String booth, Boolean implemintation,
+    public ChapterForm(String id, String adress, int workplace, String booth, String implemintation,
                    String manifestation, String printing, String urgent, String discountcard, int film,
                    String sale, String proceeds, String goods, Photocenter photocenter) {
         this.id = id;
@@ -35,6 +35,10 @@ public class ChapterForm {
         this.proceeds = proceeds;
         this.goods = goods;
         this.photocenter = photocenter;
+    }
+
+    public ChapterForm() {
+
     }
 
     public String getId() {
@@ -69,11 +73,11 @@ public class ChapterForm {
         this.booth = booth;
     }
 
-    public Boolean getImplemintation() {
+    public String getImplemintation() {
         return implemintation;
     }
 
-    public void setImplemintation(Boolean implemintation) {
+    public void setImplemintation(String implemintation) {
         this.implemintation = implemintation;
     }
 

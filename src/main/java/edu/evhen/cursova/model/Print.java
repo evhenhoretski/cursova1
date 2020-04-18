@@ -23,6 +23,10 @@ public class Print {
         this.term = term;
     }
 
+    public Print() {
+
+    }
+
     public String getId() {
         return id;
     }

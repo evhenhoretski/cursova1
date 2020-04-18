@@ -24,6 +24,10 @@ public class BoothForm {
         this.goods = goods;
     }
 
+    public BoothForm() {
+
+    }
+
     public String getId() {
         return id;
     }

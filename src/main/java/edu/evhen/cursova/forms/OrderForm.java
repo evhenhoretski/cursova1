@@ -15,6 +15,10 @@ public class OrderForm {
         this.dissemination = dissemination;
     }
 
+    public OrderForm() {
+
+    }
+
     public String getId() {
         return id;
     }

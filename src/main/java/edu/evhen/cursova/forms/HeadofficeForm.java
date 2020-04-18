@@ -9,6 +9,10 @@ public class HeadofficeForm {
         this.adress = adress;
     }
 
+    public HeadofficeForm() {
+
+    }
+
     public String getId() {
         return id;
     }

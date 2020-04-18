@@ -1,13 +1,12 @@
 package edu.evhen.cursova.controller.api;
 
+import edu.evhen.cursova.model.Booth;
 import edu.evhen.cursova.model.Photoshop;
 import edu.evhen.cursova.service.photocenter.Impls.PhotocenterServiceImpl;
 import edu.evhen.cursova.service.photoshop.Impls.PhotoshopServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,16 +17,23 @@ public class PhotoshopAPIController {
     PhotoshopServiceImpl service;
 
     @RequestMapping("/list")
-    List<Photoshop> getAll(){
+    List<Photoshop> getAll() {
         return service.getAll();
     }
 
+    @RequestMapping("/{id}")
+    Photoshop getById(@PathVariable("id") String id) {
+        return service.get(id);
+    }
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    Photoshop create(@RequestBody Photoshop photoshop) {
+        return service.save(photoshop);
+    }
+
     @RequestMapping("/delete/{id}")
-    String delete(Model model,
-                  @PathVariable("id") String id){
-        service.delete(id);
-        model.addAttribute("photoshop", service.getAll());
-        return "photoshopList";
+    Photoshop delete(@PathVariable("id") String id) {
+        return service.delete(id);
     }
 
 }

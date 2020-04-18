@@ -20,6 +20,10 @@ public class Order {
         this.dissemination = dissemination;
     }
 
+    public Order() {
+
+    }
+
     public String getId() {
         return id;
     }

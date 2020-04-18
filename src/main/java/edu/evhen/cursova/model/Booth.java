@@ -29,6 +29,10 @@ public class Booth {
         this.goods = goods;
     }
 
+    public Booth() {
+
+    }
+
     public String getId() {
         return id;
     }

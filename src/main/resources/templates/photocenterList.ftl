@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<h3>Photocenter</h3>
+<h3>Photocenter list</h3>
 <br>
 <div>
     <fieldset>
-        <legend>Find  photocenter</legend>
         <form name="search" action="" method="POST">
             Photocenter order:<@spring.formInput "searchForm.string" "" "text"/>
             <br>

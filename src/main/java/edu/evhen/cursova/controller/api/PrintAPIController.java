@@ -1,12 +1,11 @@
 package edu.evhen.cursova.controller.api;
 
+import edu.evhen.cursova.model.Booth;
 import edu.evhen.cursova.model.Print;
 import edu.evhen.cursova.service.print.Impls.PrintServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,16 +16,23 @@ public class PrintAPIController {
     PrintServiceImpl service;
 
     @RequestMapping("/list")
-    List<Print> getAll(){
+    List<Print> getAll() {
         return service.getAll();
     }
 
+    @RequestMapping("/{id}")
+    Print getById(@PathVariable("id") String id) {
+        return service.get(id);
+    }
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    Print create(@RequestBody Print print) {
+        return service.save(print);
+    }
+
     @RequestMapping("/delete/{id}")
-    String delete(Model model,
-                  @PathVariable("id") String id){
-        service.delete(id);
-        model.addAttribute("print", service.getAll());
-        return "printList";
+    Print delete(@PathVariable("id") String id) {
+        return service.delete(id);
     }
 
 }

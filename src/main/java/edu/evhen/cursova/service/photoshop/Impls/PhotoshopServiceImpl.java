@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PhotoshopServiceImpl implements IPhotoshopService {
@@ -27,12 +29,12 @@ public class PhotoshopServiceImpl implements IPhotoshopService {
 
     @Override
     public Photoshop save(Photoshop photoshop) {
-        return null;
+        return repository.save(photoshop);
     }
 
     @Override
     public Photoshop get(String id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -42,12 +44,25 @@ public class PhotoshopServiceImpl implements IPhotoshopService {
 
     @Override
     public Photoshop edit(Photoshop photoshop) {
-        return null;
+        return repository.save(photoshop);
     }
 
     @Override
     public Photoshop delete(String id) {
+        Photoshop photoshop = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return photoshop;
+    }
+
+    public List<Photoshop> search(String word) {
+        return this.getAll().stream()
+                .filter(photoshop -> photoshop.getSelling()
+                        .toLowerCase().contains(word.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Photoshop> sortByName() {
+        return this.getAll().stream().sorted(Comparator.comparing(Photoshop::getSelling))
+                .collect(Collectors.toList());
     }
 }

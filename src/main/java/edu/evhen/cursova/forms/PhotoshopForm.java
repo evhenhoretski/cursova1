@@ -24,6 +24,10 @@ public class PhotoshopForm {
         this.adress = adress;
     }
 
+    public PhotoshopForm() {
+
+    }
+
     public String getId() {
         return id;
     }

@@ -36,5 +36,4 @@ public class PhotocenterAPIController {
         return service.delete(id);
     }
 
-
 }

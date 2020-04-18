@@ -13,6 +13,10 @@ public class PersonForm {
         this.professional = professional;
     }
 
+    public PersonForm() {
+
+    }
+
     public String getId() {
         return id;
     }

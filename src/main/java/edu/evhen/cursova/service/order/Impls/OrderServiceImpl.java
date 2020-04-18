@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderServiceImpl implements IOrderService {
@@ -27,12 +29,12 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public Order save(Order order) {
-        return null;
+        return repository.save(order);
     }
 
     @Override
     public Order get(String id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -42,12 +44,26 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public Order edit(Order order) {
-        return null;
+        return repository.save(order);
     }
 
     @Override
     public Order delete(String id) {
+        Order order = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return order;
     }
-}
+
+    public List<Order> search(String word) {
+        return this.getAll().stream()
+                .filter(order -> order.getDissemination()
+                        .toLowerCase().contains(word.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Order> sortByName() {
+        return this.getAll().stream().sorted(Comparator.comparing(Order::getPaper))
+                .collect(Collectors.toList());
+    }
+
+    }

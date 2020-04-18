@@ -17,6 +17,10 @@ public class PrintForm {
         this.term = term;
     }
 
+    public PrintForm() {
+
+    }
+
     public String getId() {
         return id;
     }

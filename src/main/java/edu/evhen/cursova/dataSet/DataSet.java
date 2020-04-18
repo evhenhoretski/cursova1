@@ -46,10 +46,10 @@ public class DataSet {
 
 
     private List<Chapter> chapters = new ArrayList<>(Arrays.asList(
-            new Chapter("1", "Hoholya", '5', "1", true, "5",
+            new Chapter("1", "Hoholya", '5', "1", "true", "5",
                     "10", "0", "true", '5',
                     "10", "1400", "14", firstPhotocenter),
-            new Chapter("2", "Pidhirska", '3', "1", false, "5",
+            new Chapter("2", "Pidhirska", '3', "1", "false", "5",
                     "10", "3", "true", '5',
                     "10", "1400", "14", secondPhotocenter)
     ));
