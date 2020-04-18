@@ -29,7 +29,7 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public Photocenter save(Photocenter photocenter) {
-        return null;
+        return repository.save(photocenter);
     }
 
     @Override
@@ -45,27 +45,27 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
 
     @Override
     public Photocenter edit(Photocenter photocenter) {
-        return null;
+        return repository.save(photocenter);
     }
 
     @Override
     public Photocenter delete(String id) {
-//        Photocenter photocenter = this.get(id);
-//        dao.getAll().remove(photocenter);
-//        return photocenter;
+        Photocenter photocenter = repository.findById(id).orElse(null);
         repository.deleteById(id);
-        return repository.findById(id).orElse(null);
+        return photocenter;
+//        repository.deleteById(id);
+//        return repository.findById(id).orElse(null);
     }
 
     public List<Photocenter> search(String word) {
         return this.getAll().stream()
                 .filter(photocenter -> photocenter.getOrder()
-                        .getBytes().toString().contains(word.toLowerCase()))
+                        .toLowerCase().contains(word.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
-    public List<Photocenter> sortByEmail() {
-        return this.getAll().stream().sorted(Comparator.comparing(Photocenter::getOrder))
+    public List<Photocenter> sortByName() {
+        return this.getAll().stream().sorted(Comparator.comparing(Photocenter::getProceeds))
                 .collect(Collectors.toList());
     }
 }

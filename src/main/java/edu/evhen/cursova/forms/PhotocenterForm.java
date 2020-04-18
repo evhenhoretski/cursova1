@@ -14,6 +14,10 @@ public class PhotocenterForm {
         this.workplace = workplace;
     }
 
+    public PhotocenterForm() {
+
+    }
+
     public String getId() {
         return id;
     }

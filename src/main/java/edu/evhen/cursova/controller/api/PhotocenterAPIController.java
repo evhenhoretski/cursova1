@@ -17,33 +17,24 @@ public class PhotocenterAPIController {
     PhotocenterServiceImpl service;
 
     @RequestMapping("/list")
-    List<Photocenter> getAll(){
+    List<Photocenter> getAll() {
         return service.getAll();
     }
 
-    @PostMapping("/create")
-    Photocenter createGroupPost(@RequestBody PhotocenterForm photocenterForm){
-        Photocenter photocenter = service.get(PhotocenterForm.getGroup());
-        Photocenter photocenter = new Photocenter(photocenterForm.getId(), photocenterForm.getProceeds(),
-                photocenterForm.getOrder(), photocenterForm.getWorkplace(), photocenter());
-        return this.service.create(photocenter);
-        // return student;
+    @RequestMapping("/{id}")
+    Photocenter getById(@PathVariable("id") String id) {
+        return service.get(id);
     }
 
-
-
-    @PostMapping("/update")
-    Photocenter updateGroupPost(@RequestBody Photocenter photocenter){
-//        this.service.create(student);
-        return service.update(photocenter);
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    Photocenter create(@RequestBody Photocenter photocenter) {
+        return service.save(photocenter);
     }
 
     @RequestMapping("/delete/{id}")
-    String delete(Model model,
-                  @PathVariable("id") String id){
-        service.delete(id);
-        model.addAttribute("photocenter", service.getAll());
-        return "photocenterList";
+    Photocenter delete(@PathVariable("id") String id) {
+        return service.delete(id);
     }
+
 
 }

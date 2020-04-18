@@ -19,6 +19,10 @@ public class Photocenter {
         this.workplace = workplace;
     }
 
+    public Photocenter() {
+
+    }
+
     public String getId() {
         return id;
     }

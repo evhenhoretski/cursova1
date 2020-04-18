@@ -1,5 +1,6 @@
 package edu.evhen.cursova.controller.web;
 
+import edu.evhen.cursova.forms.PhotocenterForm;
 import edu.evhen.cursova.forms.SearchForm;
 import edu.evhen.cursova.model.Photocenter;
 import edu.evhen.cursova.service.photocenter.Impls.PhotocenterServiceImpl;
@@ -37,14 +38,14 @@ public class PhotocenterWEBController {
         List<Photocenter> list = service.search(word);
         model.addAttribute("searchForm", searchForm);
         model.addAttribute("photocenters", list);
-        return "redirect:/web/photocenter/list";
+        return "photocenterList";
     }
 
 
 
     @RequestMapping(value = "/list/sorted", method = RequestMethod.GET)
     String sort(Model model){
-        List<Photocenter> list = service.sortByEmail();
+        List<Photocenter> list = service.sortByName();
         model.addAttribute("photocenters", list);
         SearchForm searchForm = new SearchForm();
         model.addAttribute("searchForm", searchForm);
@@ -58,6 +59,47 @@ public class PhotocenterWEBController {
         List<Photocenter> list = service.search(word);
         model.addAttribute("searchForm", searchForm);
         model.addAttribute("photocenters", list);
+        return "photocenterList";
+    }
+
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    String create(Model model) {
+        PhotocenterForm photocenterForm = new PhotocenterForm();
+        model.addAttribute("photocenterForm", photocenterForm);
+        return "photocenterAdd";
+    }
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    String create(Model model, @ModelAttribute("photocenterForm") PhotocenterForm photocenterForm) {
+        Photocenter photocenter = new Photocenter();
+        photocenter.setOrder(photocenterForm.getOrder());
+        photocenter.setProceeds(photocenterForm.getProceeds());
+        photocenter.setWorkplace(photocenterForm.getWorkplace());
+        service.save(photocenter);
+        model.addAttribute("photocenters", service.getAll());
+        return "redirect:/web/photocenter/list";
+    }
+
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    String edit(Model model, @PathVariable("id") String id) {
+        Photocenter photocenter = service.get(id);
+        PhotocenterForm photocenterForm = new PhotocenterForm();
+        photocenterForm.setOrder(photocenter.getOrder());
+        photocenterForm.setProceeds(photocenter.getProceeds());
+        photocenterForm.setWorkplace(photocenter.getWorkplace());
+        model.addAttribute("photocenterForm", photocenterForm);
+        return "photocenterAdd";
+    }
+
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
+    String edit(Model model, @PathVariable("id") String id, @ModelAttribute("photocenterForm") PhotocenterForm photocenterForm) {
+        Photocenter photocenter = new Photocenter();
+        photocenter.setId(id);
+        photocenter.setOrder(photocenterForm.getOrder());
+        photocenter.setWorkplace(photocenterForm.getWorkplace());
+        photocenter.setProceeds(photocenterForm.getWorkplace());
+        service.save(photocenter);
+        model.addAttribute("photocenters", service.getAll());
         return "redirect:/web/photocenter/list";
     }
 

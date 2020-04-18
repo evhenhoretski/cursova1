@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cursova1" />
         <module name="cursova" />
+        <module name="project" />
       </profile>
     </annotationProcessing>
   </component>
@@ -15,6 +16,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cursova" options="-parameters" />
       <module name="cursova1" options="-parameters" />
+      <module name="project" options="-parameters" />
     </option>
   </component>
 </project>
