@@ -30,7 +30,7 @@
         <tr>
             <th>ID</th>
             <th>Adress<a href="/web/headoffice/list/sorted" type="button" class="btn btn-outline-light">
-                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="http://localhost:8080/web/headoffice/list" type="button" class="btn btn-outline-light">
+                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="https://app-photocenter.herokuapp.com/web/headoffice/list" type="button" class="btn btn-outline-light">
                     <i class="fa fa-undo"></i>Undo sort</a></th>
             <th>Delete</th>
             <th>Edit</th>

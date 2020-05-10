@@ -31,7 +31,7 @@
             <th>ID</th>
             <th>Professional</th>
             <th>Amateurs<a href="/web/client/list/sorted" type="button" class="btn btn-outline-light">
-                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="http://localhost:8080/web/client/list" type="button" class="btn btn-outline-light">
+                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="https://app-photocenter.herokuapp.com/web/client/list" type="button" class="btn btn-outline-light">
                     <i class="fa fa-undo"></i>Undo sort</a></th>
             <th>Discountcard</th>
             <th>Delete</th>

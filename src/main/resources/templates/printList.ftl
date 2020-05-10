@@ -30,7 +30,7 @@
         <tr>
             <th>ID</th>
             <th>Number<a href="/web/print/list/sorted" type="button" class="btn btn-outline-light">
-                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="http://localhost:8080/web/print/list" type="button" class="btn btn-outline-light">
+                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="https://app-photocenter.herokuapp.com/web/print/list" type="button" class="btn btn-outline-light">
                     <i class="fa fa-undo"></i>Undo sort</a></th>
             <th>Format</th>
             <th>Type</th>

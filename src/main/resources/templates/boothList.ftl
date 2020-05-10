@@ -32,7 +32,7 @@
         <tr>
             <th>ID</th>
             <th>Adress<a href="/web/booth/list/sorted" type="button" class="btn btn-outline-light">
-                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="http://localhost:8080/web/booth/list" type="button" class="btn btn-outline-light">
+                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="https://app-photocenter.herokuapp.com/web/booth/list" type="button" class="btn btn-outline-light">
                     <i class="fa fa-undo"></i>Undo sort</a></th>
             <th>Workplace</th>
             <th>Manifestation</th>

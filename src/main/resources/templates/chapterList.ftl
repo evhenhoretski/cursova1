@@ -31,7 +31,7 @@
         <tr>
             <th>ID</th>
             <th>Adress<a href="/web/chapter/list/sorted" type="button" class="btn btn-outline-light">
-                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="http://localhost:8080/web/chapter/list" type="button" class="btn btn-outline-light">
+                    <i class="fa fa-sort-alpha-asc"></i></a> <a href="https://app-photocenter.herokuapp.com/web/chapter/list" type="button" class="btn btn-outline-light">
                     <i class="fa fa-undo"></i>Undo sort</a></th>
             <th>Workplace</th>
             <th>Booth</th>
