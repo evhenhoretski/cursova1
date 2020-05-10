@@ -7,6 +7,7 @@ import edu.evhen.cursova.model.Person;
 import edu.evhen.cursova.model.Photocenter;
 import edu.evhen.cursova.service.person.Impls.PersonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -64,6 +65,7 @@ public class PersonWEBController {
         return "personList";
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     String create(Model model) {
         PersonForm personForm = new PersonForm();
@@ -71,6 +73,7 @@ public class PersonWEBController {
         return "personAdd";
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     String create(Model model, @ModelAttribute("personForm") PersonForm personForm) {
         Person person = new Person();
