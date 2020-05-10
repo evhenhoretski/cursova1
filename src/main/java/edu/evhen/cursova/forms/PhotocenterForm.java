@@ -1,13 +1,22 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class PhotocenterForm {
     private String id;
     //    private String provider;
+    @NotNull
+    @Size(min=2, max=30)
     private int proceeds;//виторг
-    private String order;//замовлення
-    private int workplace;//робочі місця
 
-    public PhotocenterForm(String id, int proceeds, String order, int workplace) {
+    @NotNull
+    @Min(18)
+    private String order;//замовлення
+    private String workplace;//робочі місця
+
+    public PhotocenterForm(String id, int proceeds, String order, String workplace) {
         this.id = id;
         this.proceeds = proceeds;
         this.order = order;
@@ -42,11 +51,11 @@ public class PhotocenterForm {
         this.order = order;
     }
 
-    public int getWorkplace() {
+    public String getWorkplace() {
         return workplace;
     }
 
-    public void setWorkplace(int workplace) {
+    public void setWorkplace(String workplace) {
         this.workplace = workplace;
     }
 

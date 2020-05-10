@@ -3,12 +3,15 @@ package edu.evhen.cursova.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.Email;
+
 @Document
 public class Booth {
     @Id
+    @Email
     private String id;
     private String adress;//адрес
-    private int workplace;//кількість робочих місць
+    private String workplace;//кількість робочих місць
     private String manifestation;//проявка
     private String printing;//друк
     private String discountcard;//дистконтна картка
@@ -16,7 +19,7 @@ public class Booth {
     private int proceeds;//виторг
     private String goods;//отримання товар
 
-    public Booth(String id, String adress, int workplace, String manifestation,
+    public Booth(String id, String adress, String workplace, String manifestation,
                  String printing, String discountcard, String selling, int proceeds, String goods) {
         this.id = id;
         this.adress = adress;
@@ -49,11 +52,11 @@ public class Booth {
         this.adress = adress;
     }
 
-    public int getWorkplace() {
+    public String getWorkplace() {
         return workplace;
     }
 
-    public void setWorkplace(int workplace) {
+    public void setWorkplace(String workplace) {
         this.workplace = workplace;
     }
 

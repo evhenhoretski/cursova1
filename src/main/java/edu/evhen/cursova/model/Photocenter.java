@@ -10,9 +10,9 @@ public class Photocenter {
 //    private String provider;
     private int proceeds;//виторг
     private String order;//замовлення
-    private int workplace;//робочі місця
+    private String workplace;//робочі місця
 
-    public Photocenter(String id, int proceeds, String order, int workplace) {
+    public Photocenter(String id, int proceeds, String order, String workplace) {
         this.id = id;
         this.proceeds = proceeds;
         this.order = order;
@@ -47,11 +47,11 @@ public class Photocenter {
         this.order = order;
     }
 
-    public int getWorkplace() {
+    public String getWorkplace() {
         return workplace;
     }
 
-    public void setWorkplace(int workplace) {
+    public void setWorkplace(String workplace) {
         this.workplace = workplace;
     }
 

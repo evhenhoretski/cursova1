@@ -7,12 +7,22 @@
 </head>
 <body>
 <form name="photocenter" action="" method="POST">
-    Photocenter proceeds:<@spring.formInput "photocenterForm.proceeds" "" "text"/>
-    <br>
-    Photocenter order:<@spring.formInput "photocenterForm.order", "", "text"/>
-    <br>
-    Photocenter workplace:<@spring.formInput "photocenterForm.workplace", "", "text"/>
-    <br>
+    <table>
+        Photocenter proceeds:<@spring.formInput "photocenterForm.proceeds" "" "text"/>
+<#--        <td>if="${fields.hasErrors('photocenterForm.proceeds')}" th:errors="*{name}">Name Error</td>-->
+        <br>
+        Photocenter order:<@spring.formInput "photocenterForm.order", "", "text"/>
+        <br>
+<#--        Photocenter workplace:<@spring.formSingleSelect "photocenterForm.workplace" "${list}" />-->
+        Photocenter workplace:<@spring.formSingleSelect "photocenterForm.workplace" "" />
+        <select id="photocenter" name="photocenter">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <br>
+    </table>
     <input type="submit" value="Create"/>
 </form>
 

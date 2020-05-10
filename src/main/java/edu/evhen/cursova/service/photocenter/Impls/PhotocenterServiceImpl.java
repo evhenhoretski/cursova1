@@ -24,7 +24,7 @@ public class PhotocenterServiceImpl implements IPhotocenterService {
     @PostConstruct
     void init(){
         List<Photocenter> list = dao.getAll();
-        //repository.saveAll(list);
+        repository.saveAll(list);
     }
 
     @Override

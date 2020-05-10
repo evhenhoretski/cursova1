@@ -7,8 +7,10 @@ import edu.evhen.cursova.service.photocenter.Impls.PhotocenterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -31,9 +33,14 @@ public class PhotocenterWEBController {
         model.addAttribute("photocenters", list);
         return "photocenterList";
     }
+
     @PostMapping(value = "/list")
     public String search(Model model,
-                         @ModelAttribute("searchForm") SearchForm searchForm) {
+                         @ModelAttribute("searchForm") SearchForm searchForm, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "photocenterForm";
+        }
+
         String word = searchForm.getString();
         List<Photocenter> list = service.search(word);
         model.addAttribute("searchForm", searchForm);
@@ -97,9 +104,38 @@ public class PhotocenterWEBController {
         photocenter.setId(id);
         photocenter.setOrder(photocenterForm.getOrder());
         photocenter.setWorkplace(photocenterForm.getWorkplace());
-        photocenter.setProceeds(photocenterForm.getWorkplace());
+        photocenter.setProceeds(photocenterForm.getProceeds());
         service.save(photocenter);
         model.addAttribute("photocenters", service.getAll());
+        return "redirect:/web/photocenter/list";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    String add(Model model) {
+        PhotocenterForm photocenterForm = new PhotocenterForm();
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        model.addAttribute("list", list);
+        model.addAttribute("photocenterForm", photocenterForm);
+        return "photocenterAdd";
+    }
+
+//    @ModelAttribute("numbersList")
+//    public List<String> getNumbersList() {
+//        List<String> numbersList = new ArrayList<>();
+//        numbersList.add("1");
+//        numbersList.add("2");
+//        numbersList.add("3");
+//        numbersList.add("4");
+//        return numbersList;
+//    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    String add(Model model, @ModelAttribute("photocenterForm") PhotocenterForm photocenterForm) {
+        model.addAttribute("photocenterForm", photocenterForm.getWorkplace());
         return "redirect:/web/photocenter/list";
     }
 

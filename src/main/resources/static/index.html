@@ -2,21 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>cursova</title>
+    <title>Photocenter | Welcome Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+    <style>
+        body {
+            background-color: hotpink;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>hello</h1>
+<header>
+    <nav class="dws-menu">
+        <ul>
+            <li><a target="_self" href="http://localhost:8080/#"><i class="fa fa-home"></i>Home</a></li>
 
-<a href="/api/photocenter/list">Photocenter list</a><br>
-<a href="/api/booth/list">Booth list</a><br>
-<a href="/api/chapter/list">Chapter list</a><br>
-<a href="/api/client/list">Client list</a><br>
-<a href="/api/headoffice/list">Headoffice list</a><br>
-<a href="/api/order/list">Order list</a><br>
-<a href="/api/person/list">Person list</a><br>
-<a href="/api/photoshop/list">Photoshop list</a><br>
-<a href="/api/print/list">Print list</a><br>
-<a href="/api/provider/list">Provider list</a><br>
+            <li><a href="#"><i class="fa fa-th-list"></i>Tables</a>
+                <ul>
+                    <li><a target="_self" href="/web/photocenter/list">Photocenter list</a></li>
+                    <li><a target="_self" href="/web/booth/list">Booth list</a></li>
+                    <li><a target="_self" href="/web/chapter/list">Chapter list</a></li>
+                    <li><a target="_self" href="/web/client/list">Client list</a></li>
+                    <li><a target="_self" href="/web/headoffice/list">Headoffice list</a></li>
+                    <li><a target="_self" href="/web/order/list">Order list</a></li>
+                    <li><a target="_self" href="/web/person/list">Person list</a></li>
+                    <li><a target="_self" href="/web/photoshop/list">Photoshop list</a></li>
+                    <li><a target="_self" href="/web/print/list">Print list</a></li>
+                    <li><a target="_self" href="/web/provider/list">Provider list</a></li>
+                </ul>
+            </li>
+            <li><a href="http://localhost:3000/"><i class="fa fa-camera"></i>Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+
+<img class="img" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgNDguOTk5IDQ4Ljk5OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDguOTk5IDQ4Ljk5OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxnPgoJCTxnPgoJCQk8cGF0aCBkPSJNNDIuMzMsNDMuNzA4SDYuNjY5QzIuOTkxLDQzLjcwOCwwLDQwLjcxNywwLDM3LjAzOVYxNy44NzdjMC0zLjY3OCwyLjk5Mi02LjY2OSw2LjY2OS02LjY2OWg0LjM3MyAgICAgYzAuMzc1LTMuMzI0LDMuMjA1LTUuOTE3LDYuNjI3LTUuOTE3SDMxLjMzYzMuNDIzLDAsNi4yNTIsMi41OTIsNi42MjcsNS45MTdoNC4zNzNjMy42NzgsMCw2LjY2OSwyLjk5Miw2LjY2OSw2LjY2OXYxOS4xNjEgICAgIEM0OSw0MC43MTcsNDYuMDA4LDQzLjcwOCw0Mi4zMyw0My43MDh6IE02LjY2OSwxMy4yMDhDNC4wOTQsMTMuMjA4LDIsMTUuMzAzLDIsMTcuODc3djE5LjE2MWMwLDIuNTc1LDIuMDk1LDQuNjY5LDQuNjY5LDQuNjY5ICAgICBINDIuMzNjMi41NzQsMCw0LjY2OS0yLjA5NSw0LjY2OS00LjY2OVYxNy44NzdjMC0yLjU3NS0yLjA5NS00LjY2OS00LjY2OS00LjY2OUgzN2MtMC41NTIsMC0xLTAuNDQ4LTEtMXYtMC4yNDcgICAgIGMwLTIuNTc1LTIuMDk2LTQuNjY5LTQuNjY5LTQuNjY5SDE3LjY2OUMxNS4wOTQsNy4yOTIsMTMsOS4zODcsMTMsMTEuOTYxdjAuMjQ3YzAsMC41NTItMC40NDgsMS0xLDFINi42Njl6IiBmaWxsPSIjMDAwMDAwIi8+CgkJPC9nPgoJCTxnPgoJCQk8cGF0aCBkPSJNMjQuNSwzNy45NThjLTYuNjE3LDAtMTItNS4zODMtMTItMTJjMC02LjYxNyw1LjM4My0xMiwxMi0xMnMxMiw1LjM4MywxMiwxMkMzNi41LDMyLjU3NSwzMS4xMTYsMzcuOTU4LDI0LjUsMzcuOTU4eiAgICAgIE0yNC41LDE1Ljk1OGMtNS41MTQsMC0xMCw0LjQ4Ni0xMCwxMGMwLDUuNTE1LDQuNDg2LDEwLDEwLDEwYzUuNTE0LDAsMTAtNC40ODUsMTAtMTBDMzQuNSwyMC40NDQsMzAuMDE0LDE1Ljk1OCwyNC41LDE1Ljk1OHoiIGZpbGw9IiMwMDAwMDAiLz4KCQk8L2c+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0yNC41LDMzLjc5MWMtNC4zMTksMC03LjgzMy0zLjUxNC03LjgzMy03LjgzM2MwLTQuMzE5LDMuNTE0LTcuODMzLDcuODMzLTcuODMzYzQuMzE4LDAsNy44MzMsMy41MTQsNy44MzMsNy44MzMgICAgIEMzMi4zMzMsMzAuMjc3LDI4LjgxOCwzMy43OTEsMjQuNSwzMy43OTF6IE0yNC41LDIwLjEyNGMtMy4yMTcsMC01LjgzMywyLjYxNy01LjgzMyw1LjgzM2MwLDMuMjE3LDIuNjE3LDUuODMzLDUuODMzLDUuODMzICAgICBzNS44MzMtMi42MTYsNS44MzMtNS44MzNDMzAuMzMzLDIyLjc0MSwyNy43MTYsMjAuMTI0LDI0LjUsMjAuMTI0eiIgZmlsbD0iIzAwMDAwMCIvPgoJCTwvZz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+
+<div class="text">
+    <p3>Photo</p3>
+    <br>
+    <p3>Center</p3>
+</div>
 </body>
 </html>

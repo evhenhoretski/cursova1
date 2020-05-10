@@ -10,11 +10,11 @@ import java.util.List;
 
 @Component
 public class DataSet {
-    Photocenter mainPhotocenter = new Photocenter("4", '4', "ooo", '7');
+    Photocenter mainPhotocenter = new Photocenter("4", '4', "ooo", "7");
     private List<Photocenter> photocenters = Arrays.asList(
-            new Photocenter("1", '5', "paper", '6'),
-            new Photocenter("2",  '3', "paper", '8'),
-            new Photocenter("3",  '3', "paper", '7'),
+            new Photocenter("1", '5', "paper", "6"),
+            new Photocenter("2",  '3', "paper", "8"),
+            new Photocenter("3",  '3', "paper", "7"),
             mainPhotocenter
     );
     private Photocenter firstPhotocenter = photocenters.get(0);
@@ -30,9 +30,9 @@ public class DataSet {
 
 
     private List<Booth> booths = new ArrayList<>(Arrays.asList(
-            new Booth("1", "Hoholya", '5', "true", "13", "true",
+            new Booth("1", "Hoholya", "5", "true", "13", "true",
                     "10", '0', "15"),
-            new Booth("2", "Mozart", '2', "true", "67", "false",
+            new Booth("2", "Mozart", "2", "true", "67", "false",
                     "10", '0', "15")
     ));
 
