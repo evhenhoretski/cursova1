@@ -5,6 +5,7 @@ import edu.evhen.cursova.forms.SearchForm;
 import edu.evhen.cursova.model.Photocenter;
 import edu.evhen.cursova.service.photocenter.Impls.PhotocenterServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -69,6 +70,7 @@ public class PhotocenterWEBController {
         return "photocenterList";
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     String create(Model model) {
         PhotocenterForm photocenterForm = new PhotocenterForm();
@@ -76,6 +78,7 @@ public class PhotocenterWEBController {
         return "photocenterAdd";
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     String create(Model model, @ModelAttribute("photocenterForm") PhotocenterForm photocenterForm) {
         Photocenter photocenter = new Photocenter();
@@ -122,16 +125,6 @@ public class PhotocenterWEBController {
         model.addAttribute("photocenterForm", photocenterForm);
         return "photocenterAdd";
     }
-
-//    @ModelAttribute("numbersList")
-//    public List<String> getNumbersList() {
-//        List<String> numbersList = new ArrayList<>();
-//        numbersList.add("1");
-//        numbersList.add("2");
-//        numbersList.add("3");
-//        numbersList.add("4");
-//        return numbersList;
-//    }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     String add(Model model, @ModelAttribute("photocenterForm") PhotocenterForm photocenterForm) {

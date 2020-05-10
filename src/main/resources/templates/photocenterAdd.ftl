@@ -9,11 +9,9 @@
 <form name="photocenter" action="" method="POST">
     <table>
         Photocenter proceeds:<@spring.formInput "photocenterForm.proceeds" "" "text"/>
-<#--        <td>if="${fields.hasErrors('photocenterForm.proceeds')}" th:errors="*{name}">Name Error</td>-->
         <br>
         Photocenter order:<@spring.formInput "photocenterForm.order", "", "text"/>
         <br>
-<#--        Photocenter workplace:<@spring.formSingleSelect "photocenterForm.workplace" "${list}" />-->
         Photocenter workplace:<@spring.formSingleSelect "photocenterForm.workplace" "" />
         <select id="photocenter" name="photocenter">
             <option value="1">1</option>
