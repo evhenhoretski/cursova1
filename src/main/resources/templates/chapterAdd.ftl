@@ -3,14 +3,7 @@
 <html lang="en">
 <style>
     * {
-        background-color: lightblue;
-    }
-
-    .search {
-        background: lightblue; /* Цвет фона */
-        color: #454547; /* Цвет текста */
-        padding: 10px; /* Поля вокруг текста */
-        border-radius: 5px; /* Уголки */
+        background-color: lightpink;
     }
 </style>
 <head>
@@ -19,31 +12,57 @@
 </head>
 <body>
 <form name="chapter" action="" method="POST">
-    Chapter adress:<@spring.formInput "chapterForm.adress" "" "text"/>
+    Chapter adress:
     <br>
-    Chapter workplace:<@spring.formInput "chapterForm.workplace", "", "text"/>
+    <@spring.formInput "chapterForm.adress" "" "text"/>
     <br>
-    Chapter booth:<@spring.formInput "chapterForm.booth", "", "text"/>
+    Chapter workplace:
     <br>
-    Chapter implemintation:<@spring.formInput "chapterForm.implemintation", "", "text"/>
+    <@spring.formInput "chapterForm.workplace", "", "text"/>
     <br>
-    Chapter manifestation:<@spring.formInput "chapterForm.manifestation", "", "text"/>
+    Chapter booth:
     <br>
-    Chapter printing:<@spring.formInput "chapterForm.printing", "", "text"/>
+    <@spring.formInput "chapterForm.booth", "", "text"/>
     <br>
-    Chapter urgent:<@spring.formInput "chapterForm.urgent", "", "text"/>
+    Chapter implemintation:
     <br>
-    Chapter discountcard:<@spring.formInput "chapterForm.discountcard", "", "text"/>
+    <@spring.formInput "chapterForm.implemintation", "", "text"/>
     <br>
-    Chapter film:<@spring.formInput "chapterForm.film", "", "text"/>
+    Chapter manifestation:
     <br>
-    Chapter sale:<@spring.formInput "chapterForm.sale", "", "text"/>
+    <@spring.formInput "chapterForm.manifestation", "", "text"/>
     <br>
-    Chapter proceeds:<@spring.formInput "chapterForm.proceeds", "", "text"/>
+    Chapter printing:
     <br>
-    Chapter goods:<@spring.formInput "chapterForm.goods", "", "text"/>
+    <@spring.formInput "chapterForm.printing", "", "text"/>
     <br>
-    Chapter photocenter:<@spring.formInput "chapterForm.photocenter", "", "text"/>
+    Chapter urgent:
+    <br>
+    <@spring.formInput "chapterForm.urgent", "", "text"/>
+    <br>
+    Chapter discountcard:
+    <br>
+    <@spring.formInput "chapterForm.discountcard", "", "text"/>
+    <br>
+    Chapter film:
+    <br>
+    <@spring.formInput "chapterForm.film", "", "text"/>
+    <br>
+    Chapter sale:
+    <br>
+    <@spring.formInput "chapterForm.sale", "", "text"/>
+    <br>
+    Chapter proceeds:
+    <br>
+    <@spring.formInput "chapterForm.proceeds", "", "text"/>
+    <br>
+    Chapter goods:
+    <br>
+    <@spring.formInput "chapterForm.goods", "", "text"/>
+    <br>
+    Chapter photocenter:
+    <br>
+    <@spring.formInput "chapterForm.photocenter", "", "text"/>
     <br>
     <input type="submit" value="Create"/>
 </form>

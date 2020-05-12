@@ -3,14 +3,7 @@
 <html lang="en">
 <style>
     * {
-        background-color: lightblue;
-    }
-
-    .search {
-        background: lightblue; /* Цвет фона */
-        color: #454547; /* Цвет текста */
-        padding: 10px; /* Поля вокруг текста */
-        border-radius: 5px; /* Уголки */
+        background-color: lightpink;
     }
 </style>
 <head>
@@ -19,11 +12,17 @@
 </head>
 <body>
 <form name="person" action="" method="POST">
-    Person name:<@spring.formInput "personForm.name" "" "text"/>
+    Person name:
     <br>
-    Person card:<@spring.formInput "personForm.card", "", "text"/>
+    <@spring.formInput "personForm.name" "" "text"/>
     <br>
-    Person professional:<@spring.formInput "personForm.professional", "", "text"/>
+    Person card:
+    <br>
+    <@spring.formInput "personForm.card", "", "text"/>
+    <br>
+    Person professional:
+    <br>
+    <@spring.formInput "personForm.professional", "", "text"/>
     <br>
     <input type="submit" value="Create"/>
 </form>

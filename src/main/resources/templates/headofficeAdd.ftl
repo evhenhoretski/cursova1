@@ -3,14 +3,7 @@
 <html lang="en">
 <style>
     * {
-        background-color: lightblue;
-    }
-
-    .search {
-        background: lightblue; /* Цвет фона */
-        color: #454547; /* Цвет текста */
-        padding: 10px; /* Поля вокруг текста */
-        border-radius: 5px; /* Уголки */
+        background-color: lightpink;
     }
 </style>
 <head>
@@ -19,7 +12,9 @@
 </head>
 <body>
 <form name="headoffice" action="" method="POST">
-    Headoffice adress:<@spring.formInput "headofficeForm.adress" "" "text"/>
+    Headoffice adress:
+    <br>
+    <@spring.formInput "headofficeForm.adress" "" "text"/>
     <br>
     <input type="submit" value="Create"/>
 </form>

@@ -3,14 +3,7 @@
 <html lang="en">
 <style>
     * {
-        background-color: lightblue;
-    }
-
-    .search {
-        background: lightblue; /* Цвет фона */
-        color: #454547; /* Цвет текста */
-        padding: 10px; /* Поля вокруг текста */
-        border-radius: 5px; /* Уголки */
+        background-color: lightpink;
     }
 </style>
 <head>
@@ -19,21 +12,37 @@
 </head>
 <body>
 <form name="booth" action="" method="POST">
-    Booth adress:<@spring.formInput "boothForm.adress" "" "text"/>
+    Booth adress:
     <br>
-    Booth workplace:<@spring.formInput "boothForm.workplace", "", "text"/>
+    <@spring.formInput "boothForm.adress" "" "text"/>
     <br>
-    Booth manifestation:<@spring.formInput "boothForm.manifestation", "", "text"/>
+    Booth workplace:
     <br>
-    Booth printing:<@spring.formInput "boothForm.printing", "", "text"/>
+    <@spring.formInput "boothForm.workplace", "", "text"/>
     <br>
-    Booth discountcard:<@spring.formInput "boothForm.discountcard", "", "text"/>
+    Booth manifestation:
     <br>
-    Booth selling:<@spring.formInput "boothForm.selling", "", "text"/>
+    <@spring.formInput "boothForm.manifestation", "", "text"/>
     <br>
-    Booth proceeds:<@spring.formInput "boothForm.proceeds", "", "text"/>
+    Booth printing:
     <br>
-    Booth goods:<@spring.formInput "boothForm.goods", "", "text"/>
+    <@spring.formInput "boothForm.printing", "", "text"/>
+    <br>
+    Booth discountcard:
+    <br>
+    <@spring.formInput "boothForm.discountcard", "", "text"/>
+    <br>
+    Booth selling:
+    <br>
+    <@spring.formInput "boothForm.selling", "", "text"/>
+    <br>
+    Booth proceeds:
+    <br>
+    <@spring.formInput "boothForm.proceeds", "", "text"/>
+    <br>
+    Booth goods:
+    <br>
+    <@spring.formInput "boothForm.goods", "", "text"/>
     <br>
     <input type="submit" value="Create"/>
 </form>

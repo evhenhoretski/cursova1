@@ -3,14 +3,7 @@
 <html lang="en">
 <style>
     * {
-        background-color: lightblue;
-    }
-
-    .search {
-        background: lightblue; /* Цвет фона */
-        color: #454547; /* Цвет текста */
-        padding: 10px; /* Поля вокруг текста */
-        border-radius: 5px; /* Уголки */
+        background-color: lightpink;
     }
 </style>
 <head>
@@ -19,21 +12,37 @@
 </head>
 <body>
 <form name="photocenter" action="" method="POST">
-    Photoshop selling:<@spring.formInput "photoshopForm.selling" "" "text"/>
+    Photoshop selling:
     <br>
-    Photoshop ondocuments:<@spring.formInput "photoshopForm.ondocuments", "", "text"/>
+    <@spring.formInput "photoshopForm.selling" "" "text"/>
     <br>
-    Photoshop restoration:<@spring.formInput "photoshopForm.restoration", "", "text"/>
+    Photoshop ondocuments:
     <br>
-    Photoshop rolling:<@spring.formInput "photoshopForm.rolling", "", "text"/>
+    <@spring.formInput "photoshopForm.ondocuments", "", "text"/>
     <br>
-    Photoshop artistic:<@spring.formInput "photoshopForm.artistic", "", "text"/>
+    Photoshop restoration:
     <br>
-    Photoshop professionalphoto:<@spring.formInput "photoshopForm.professionalphoto", "", "text"/>
+    <@spring.formInput "photoshopForm.restoration", "", "text"/>
     <br>
-    Photoshop goods:<@spring.formInput "photoshopForm.goods", "", "text"/>
+    Photoshop rolling:
     <br>
-    Photoshop adress:<@spring.formInput "photoshopForm.adress", "", "text"/>
+    <@spring.formInput "photoshopForm.rolling", "", "text"/>
+    <br>
+    Photoshop artistic:
+    <br>
+    <@spring.formInput "photoshopForm.artistic", "", "text"/>
+    <br>
+    Photoshop professionalphoto:
+    <br>
+    <@spring.formInput "photoshopForm.professionalphoto", "", "text"/>
+    <br>
+    Photoshop goods:
+    <br>
+    <@spring.formInput "photoshopForm.goods", "", "text"/>
+    <br>
+    Photoshop adress:
+    <br>
+    <@spring.formInput "photoshopForm.adress", "", "text"/>
     <br>
     <input type="submit" value="Create"/>
 </form>

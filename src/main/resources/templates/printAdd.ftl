@@ -3,14 +3,7 @@
 <html lang="en">
 <style>
     * {
-        background-color: lightblue;
-    }
-
-    .search {
-        background: lightblue; /* Цвет фона */
-        color: #454547; /* Цвет текста */
-        padding: 10px; /* Поля вокруг текста */
-        border-radius: 5px; /* Уголки */
+        background-color: lightpink;
     }
 </style>
 <head>
@@ -19,13 +12,21 @@
 </head>
 <body>
 <form name="print" action="" method="POST">
-    Print number:<@spring.formInput "printForm.number" "" "text"/>
+    Print number:
     <br>
-    Print format:<@spring.formInput "printForm.format", "", "text"/>
+    <@spring.formInput "printForm.number" "" "text"/>
     <br>
-    Print type:<@spring.formInput "printForm.type", "", "text"/>
+    Print format:
     <br>
-    Print term:<@spring.formInput "printForm.term", "", "text"/>
+    <@spring.formInput "printForm.format", "", "text"/>
+    <br>
+    Print type:
+    <br>
+    <@spring.formInput "printForm.type", "", "text"/>
+    <br>
+    Print term:
+    <br>
+    <@spring.formInput "printForm.term", "", "text"/>
     <br>
     <input type="submit" value="Create"/>
 </form>

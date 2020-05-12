@@ -5,13 +5,6 @@
     * {
         background-color: lightpink;
     }
-
-    .search {
-        background: lightpink; /* Цвет фона */
-        color: #454547; /* Цвет текста */
-        padding: 10px; /* Поля вокруг текста */
-        border-radius: 5px; /* Уголки */
-    }
 </style>
 <head>
     <meta charset="UTF-8">

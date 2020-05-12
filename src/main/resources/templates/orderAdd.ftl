@@ -3,14 +3,7 @@
 <html lang="en">
 <style>
     * {
-        background-color: lightblue;
-    }
-
-    .search {
-        background: lightblue; /* Цвет фона */
-        color: #454547; /* Цвет текста */
-        padding: 10px; /* Поля вокруг текста */
-        border-radius: 5px; /* Уголки */
+        background-color: lightpink;
     }
 </style>
 <head>
@@ -19,13 +12,21 @@
 </head>
 <body>
 <form name="photocenter" action="" method="POST">
-    Order paper:<@spring.formInput "orderForm.paper" "" "text"/>
+    Order paper:
     <br>
-    Order film:<@spring.formInput "orderForm.film", "", "text"/>
+    <@spring.formInput "orderForm.paper" "" "text"/>
     <br>
-    Order chemical:<@spring.formInput "orderForm.chemical", "", "text"/>
+    Order film:
     <br>
-    Order dissemination:<@spring.formInput "orderForm.dissemination", "", "text"/>
+    <@spring.formInput "orderForm.film", "", "text"/>
+    <br>
+    Order chemical:
+    <br>
+    <@spring.formInput "orderForm.chemical", "", "text"/>
+    <br>
+    Order dissemination:
+    <br>
+    <@spring.formInput "orderForm.dissemination", "", "text"/>
     <br>
     <input type="submit" value="Create"/>
 </form>

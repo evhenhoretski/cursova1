@@ -1,6 +1,11 @@
 <#import "/spring.ftl" as spring>
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    .search {
+        background-color: lightpink;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Client table</title>
@@ -12,8 +17,10 @@
 <div>
     <fieldset>
         <form name="search" action="" method="POST">
-            Client amateurs:<@spring.formInput "searchForm.string" "" "text"/>
-            <br>
+            <div class="search">
+                Client amateurs:<@spring.formInput "searchForm.string" "" "text"/>
+                <br>
+            </div>
             <input type="submit" value="Search"/>
         </form>
     </fieldset>
