@@ -12,13 +12,7 @@
         <br>
         Photocenter order:<@spring.formInput "photocenterForm.order", "", "text"/>
         <br>
-        Photocenter workplace:<@spring.formSingleSelect "photocenterForm.workplace" "" />
-        <select id="photocenter" name="photocenter">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
+        Photocenter workplace:<@spring.formInput "photocenterForm.workplace", "", "text" />
         <br>
     </table>
     <input type="submit" value="Create"/>
