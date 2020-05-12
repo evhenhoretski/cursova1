@@ -2,14 +2,20 @@ package edu.evhen.cursova.forms;
 
 import edu.evhen.cursova.model.Photocenter;
 
+import javax.validation.constraints.NotNull;
+
 public class ChapterForm {
     private String id;
+
+    @NotNull
     private String adress;//адрес
     private int workplace;//кількість робочих місць
     private String booth;//кіоски
     private String implemintation;//виконання замовлення
     private String manifestation;//проявка
     private String printing;//друк
+
+    @NotNull
     private String urgent;//термінові
     private String discountcard;//дистконтна картка
     private int film;//продаж плівки

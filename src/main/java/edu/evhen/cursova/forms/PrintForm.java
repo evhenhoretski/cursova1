@@ -1,12 +1,20 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 public class PrintForm {
     private String id;
     private int number;//кількість фото
+
+    @Size(min=2, max=4)
     private String format;//формат
+
+    @NotNull
     private String type;//тип паперу
+
+    @NotNull
     private LocalDateTime term;//термін
 
     public PrintForm(String id, int number, String format, String type, LocalDateTime term) {

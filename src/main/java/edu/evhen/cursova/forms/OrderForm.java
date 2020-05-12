@@ -1,9 +1,16 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Size;
+
 public class OrderForm {
     private String id;
+
+    @Size(min=2, max=4)
     private String paper;//папір
     private String film;//фотоплівка
+
+    @Max(20)
     private String chemical;//хімічні реактиви
     private String dissemination;//розповсюдження
 

@@ -1,10 +1,17 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class BoothForm {
     private String id;
+
+    @NotNull
     private String adress;//адрес
     private String workplace;//кількість робочих місць
     private String manifestation;//проявка
+
+    @Size(min=2, max=4)
     private String printing;//друк
     private String discountcard;//дистконтна картка
     private String selling;//продаж товару

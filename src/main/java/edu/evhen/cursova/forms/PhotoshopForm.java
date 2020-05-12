@@ -1,5 +1,7 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.NotNull;
+
 public class PhotoshopForm {
     private String id;
     private String selling;//продаж товару
@@ -9,6 +11,8 @@ public class PhotoshopForm {
     private String artistic;//художнє фото
     private String professionalphoto;//професіональний фотограф
     private String goods;//отримання товар
+
+    @NotNull
     private String adress;//
 
     public PhotoshopForm(String id, String selling, String ondocuments, String restoration,

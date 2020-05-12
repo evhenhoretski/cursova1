@@ -1,7 +1,11 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.NotNull;
+
 public class HeadofficeForm {
     private String id;
+
+    @NotNull
     private String adress;//адрес
 
     public HeadofficeForm(String id, String adress) {

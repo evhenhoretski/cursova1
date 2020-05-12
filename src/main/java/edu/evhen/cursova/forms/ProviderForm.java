@@ -1,8 +1,14 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.NotNull;
+
 public class ProviderForm {
     private String id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private String paper;
     private String film;
     private String paint;

@@ -1,10 +1,24 @@
 <#import "/spring.ftl" as spring>
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    * {
+        background-color: lightpink;
+    }
+
+    .search {
+        background: lightpink; /* Цвет фона */
+        color: #454547; /* Цвет текста */
+        padding: 10px; /* Поля вокруг текста */
+        border-radius: 5px; /* Уголки */
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <title>Booth table</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style1.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
 </head>
 <body>
 <h3>Booth list</h3>
@@ -12,8 +26,10 @@
 <div>
     <fieldset>
         <form name="search" action="" method="POST">
-            Booth adress:<@spring.formInput "searchForm.string" "" "text"/>
-            <br>
+            <div class="search">
+                Booth adress:<@spring.formInput "searchForm.string" "" "text"/>
+                <br>
+            </div>
             <input type="submit" value="Search"/>
         </form>
     </fieldset>
@@ -24,7 +40,6 @@
 <a href="https://app-photocenter.herokuapp.com/" type="button" class="btn btn-light" style="float:left; margin-top:5px;"><i class="fa fa-chevron-circle-left"></i>Back to home page</a>
 
 <a href="create" type="button" class="btn btn-light" style="float:right; margin-top:5px;"><i class="fa fa-plus-square-o"></i>Add new booth</a>
-<#--<a href="create"><button>Create</button></a>-->
 
 <br>
 <div>

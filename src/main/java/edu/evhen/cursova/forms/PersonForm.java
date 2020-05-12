@@ -1,9 +1,19 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+
 public class PersonForm {
     private String id;
+
+    @NotNull
+    @Max(30)
     private String name;
+
+    @NotNull
     private String card;
+
+    @NotNull
     private String professional;
 
     public PersonForm(String id, String name, String card, String professional) {

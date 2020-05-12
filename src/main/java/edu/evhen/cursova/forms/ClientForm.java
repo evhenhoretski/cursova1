@@ -1,9 +1,15 @@
 package edu.evhen.cursova.forms;
 
+import javax.validation.constraints.NotNull;
+
 public class ClientForm {
     private String id;
+
+    @NotNull
     private String professional;//професіонал знижка в тій філії
     private String amateurs;//аматор
+
+    @NotNull
     private String discountcard;//наявність дисконтної карти
 
     public ClientForm(String id, String professional, String amateurs, String discountcard) {
